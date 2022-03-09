@@ -132,9 +132,7 @@ public class Ini extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 363, 140, 40));
-
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/planta.jpg"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -146,7 +144,7 @@ public class Ini extends javax.swing.JFrame {
              consulta.setString(1, orden);
              ResultSet resultado = consulta.executeQuery();
                   if (resultado.next()){
-                      jTextFieldarticulo.setText(resultado.getString("articulo"));                      
+                      jTextFieldarticulo.setText(resultado.getString("producto"));                      
                   }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null,e.toString());
