@@ -16,6 +16,7 @@ public class Ini extends javax.swing.JFrame {
      */
     public Ini() {
         initComponents();
+        this.setLocationRelativeTo(null);
         cargar.consultar_nombre(CboxOperarios);
         cargar.consultar_op(cBox_ordenes);
     }
@@ -170,10 +171,21 @@ public class Ini extends javax.swing.JFrame {
             int m=pps.executeUpdate();
             if (m==1){
                 JOptionPane.showMessageDialog(null, "Registro enviado");
+                
             }
-            else{JOptionPane.showMessageDialog(null, "Algo paso");}
+            else {
+                JOptionPane.showMessageDialog(null, "Algo paso");
+            }
+            jDateChooser1.setDate(null);
+            CboxOperarios.setSelectedItem(null);
+            cBox_ordenes.setSelectedItem(null);
+            jTextFieldCiclo.setText("");
+            jTextFieldCav.setText("");
+            jComboBoxTurno.setSelectedItem(null);
+            jTextFieldProd.setText("");
         } catch (Exception e) {
         }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
