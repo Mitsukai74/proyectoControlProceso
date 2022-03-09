@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 public class Conexion {
     
-    private  final String url="jdbc:mysql://localhost:3306/inicio_control";
+    private  final String url="jdbc:mysql://localhost:3306/controlproceso";
          private final String usuario="root";
         private  final String clave="";
         private Connection conex = null;        

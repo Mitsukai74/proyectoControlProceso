@@ -142,7 +142,7 @@ public class Ini extends javax.swing.JFrame {
     private void cBox_ordenesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cBox_ordenesActionPerformed
         String orden=cBox_ordenes.getSelectedItem().toString();
         try {
-             PreparedStatement consulta = cn.devuelveConex().prepareStatement("SELECT * FROM ordenes_produccion where op = ? ");
+             PreparedStatement consulta = cn.devuelveConex().prepareStatement("SELECT * FROM ordenes where op = ? ");
              consulta.setString(1, orden);
              ResultSet resultado = consulta.executeQuery();
                   if (resultado.next()){
@@ -157,16 +157,23 @@ public class Ini extends javax.swing.JFrame {
         SimpleDateFormat formatofecha=new SimpleDateFormat("yyyy-MM-dd");
         String pasofecha = (formatofecha.format(jDateChooser1.getDate()));
         try {
-            PreparedStatement pps=cn.devuelveConex().prepareStatement("INSERT INTO control_proceso(fecha,nombre,orden,producto,peso,ciclo)"+
-                    "VALUES(?,?,?,?,?,?)");
+            PreparedStatement pps=cn.devuelveConex().prepareStatement("INSERT INTO control(fecha,nombre,orden,producto,turno,ciclo,cavidades,produccion)"+
+                    "VALUES(?,?,?,?,?,?,?,?)");
             pps.setString(1, pasofecha);
             pps.setString(2,CboxOperarios.getSelectedItem().toString());
             pps.setInt(3,cBox_ordenes.getSelectedIndex());
             pps.setString(4,jTextFieldarticulo.getText());
-            pps.setDouble(5,Double.parseDouble(jTextFieldCiclo.getText()));
-            pps.setDouble(6,Double.parseDouble(jTextFieldCav.getText()));
+            pps.setInt(5, jComboBoxTurno.getItemCount());
+            pps.setDouble(6,Double.parseDouble(jTextFieldCiclo.getText()));
+            pps.setDouble(7,Double.parseDouble(jTextFieldCav.getText()));
+            pps.setInt(8, Integer.parseInt(jTextFieldProd.getText()));
             
-            pps.execute();
+            
+            int m=pps.executeUpdate();
+            if (m==1){
+                JOptionPane.showMessageDialog(null, "Registro enviado");
+            }
+            else{JOptionPane.showMessageDialog(null, "Algo paso");}
         } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -21,7 +21,7 @@ public class Form_principal {
         ResultSet result = null;
 
 //Creamos la Consulta SQL
-        String SSQL = "SELECT * FROM arranque ORDER BY nombre ASC";
+        String SSQL = "SELECT * FROM personal ORDER BY nombre ASC";
 //Establecemos bloque try-catch-finally
         try {
 
@@ -68,7 +68,7 @@ public class Form_principal {
         PreparedStatement pst = null;
         ResultSet result = null;
         
-         String SSQL = "SELECT * FROM ordenes_produccion ORDER BY op ASC";
+         String SSQL = "SELECT * FROM ordenes ORDER BY op ASC";
         try {
             conectar = con.devuelveConex();
             pst = conectar.prepareStatement(SSQL);
