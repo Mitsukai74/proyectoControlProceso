@@ -132,7 +132,7 @@ public class Ini extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 363, 140, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 140, 40));
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, -1));
 
         pack();
@@ -171,23 +171,22 @@ public class Ini extends javax.swing.JFrame {
             int m=pps.executeUpdate();
             if (m==1){
                 JOptionPane.showMessageDialog(null, "Registro enviado");
+                jDateChooser1.setDate(null);
+                cBox_ordenes.setSelectedItem(null);                
+                jTextFieldCiclo.setText(null);
+                jTextFieldCav.setText(null);
+                jTextFieldProd.setText(null);
                 
             }
             else {
                 JOptionPane.showMessageDialog(null, "Algo paso");
             }
-            jDateChooser1.setDate(null);
-            CboxOperarios.setSelectedItem(null);
-            cBox_ordenes.setSelectedItem(null);
-            jTextFieldCiclo.setText("");
-            jTextFieldCav.setText("");
-            jComboBoxTurno.setSelectedItem(null);
-            jTextFieldProd.setText("");
+            
         } catch (Exception e) {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
-
+        
     /**
      * @param args the command line arguments
      */
