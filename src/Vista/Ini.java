@@ -45,6 +45,7 @@ public class Ini extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jTextFieldProd = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jButtonLimpiar = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -133,6 +134,15 @@ public class Ini extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 140, 40));
+
+        jButtonLimpiar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonLimpiar.setText("Limpiar");
+        jButtonLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLimpiarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 130, 40));
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, -1));
 
         pack();
@@ -171,11 +181,7 @@ public class Ini extends javax.swing.JFrame {
             int m=pps.executeUpdate();
             if (m==1){
                 JOptionPane.showMessageDialog(null, "Registro enviado");
-                jDateChooser1.setDate(null);
-                cBox_ordenes.setSelectedItem(null);                
-                jTextFieldCiclo.setText(null);
-                jTextFieldCav.setText(null);
-                jTextFieldProd.setText(null);
+                
                 
             }
             else {
@@ -186,7 +192,18 @@ public class Ini extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
-        
+
+    private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarActionPerformed
+        limpiar();
+    }//GEN-LAST:event_jButtonLimpiarActionPerformed
+    public void limpiar()
+    {
+                jDateChooser1.setDate(null);
+                CboxOperarios.setSelectedIndex(0);
+                jTextFieldCiclo.setText(null);
+                jTextFieldCav.setText(null);
+                jTextFieldProd.setText(null);
+    }   
     /**
      * @param args the command line arguments
      */
@@ -226,6 +243,7 @@ public class Ini extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CboxOperarios;
     private javax.swing.JComboBox<String> cBox_ordenes;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonLimpiar;
     private javax.swing.JComboBox<String> jComboBoxTurno;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
