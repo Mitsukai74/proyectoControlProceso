@@ -46,6 +46,7 @@ public class Ini extends javax.swing.JFrame {
         jTextFieldProd = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButtonLimpiar = new javax.swing.JButton();
+        jButtonGraficar = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -133,7 +134,7 @@ public class Ini extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 140, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 130, 40));
 
         jButtonLimpiar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButtonLimpiar.setText("Limpiar");
@@ -142,7 +143,11 @@ public class Ini extends javax.swing.JFrame {
                 jButtonLimpiarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 130, 40));
+        getContentPane().add(jButtonLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, 130, 40));
+
+        jButtonGraficar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButtonGraficar.setText("Graficar");
+        getContentPane().add(jButtonGraficar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, 130, 40));
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, -1));
 
         pack();
@@ -243,6 +248,7 @@ public class Ini extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CboxOperarios;
     private javax.swing.JComboBox<String> cBox_ordenes;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonGraficar;
     private javax.swing.JButton jButtonLimpiar;
     private javax.swing.JComboBox<String> jComboBoxTurno;
     private com.toedter.calendar.JDateChooser jDateChooser1;
