@@ -146,6 +146,11 @@ public class Ini extends javax.swing.JFrame {
 
         jButtonGraficar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButtonGraficar.setText("Graficar");
+        jButtonGraficar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGraficarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonGraficar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, 130, 40));
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, -1));
         getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 130, 30));
@@ -203,9 +208,10 @@ public class Ini extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonLimpiarActionPerformed
 
     private void jButtonGraficarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGraficarActionPerformed
+        //this.setVisible(false);
         MostrarGrafica open=new MostrarGrafica();
         open.setVisible(true);
-        this.setVisible(false);
+        
     }//GEN-LAST:event_jButtonGraficarActionPerformed
     public void limpiar()
     {

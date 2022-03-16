@@ -12,6 +12,7 @@ public class MostrarGrafica extends javax.swing.JFrame {
 
     public MostrarGrafica() {
         initComponents();
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -45,7 +46,6 @@ public class MostrarGrafica extends javax.swing.JFrame {
         jLabel2.setText("Escoja el producto");
 
         jComboBoxProducto.setBackground(new java.awt.Color(255, 255, 51));
-        jComboBoxProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBoxProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxProductoActionPerformed(evt);
@@ -90,24 +90,29 @@ public class MostrarGrafica extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBoxProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxProductoActionPerformed
+        
+        consultarProducto();
+    }//GEN-LAST:event_jComboBoxProductoActionPerformed
+    
+    public void consultarProducto()
+    {
         String producto;
         producto=jComboBoxProducto.getSelectedObjects().toString();
         try {
-            PreparedStatement consulta = cn.devuelveConex().prepareStatement("SELECT * FROM control where producto = ? ");
+            PreparedStatement consulta = cn.devuelveConex().prepareStatement("SELECT * FROM control ORDER BY producto ASC");            
+            jComboBoxProducto.addItem("Seleccione una opción");
             ResultSet resultado = consulta.executeQuery();
             
             while (resultado.next()) {
 
                 jComboBoxProducto.addItem(resultado.getString("producto"));
-            }                  
+            } 
+            cn.devuelveConex().close();
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
-        }
-
-            
-    }//GEN-LAST:event_jComboBoxProductoActionPerformed
-
+        }  
+    }
     /**
      * @param args the command line arguments
      */
