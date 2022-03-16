@@ -29,7 +29,6 @@ public class Ini extends javax.swing.JFrame {
         jLabelTitle1 = new javax.swing.JLabel();
         jLabelSubtitulo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         jLabel2 = new javax.swing.JLabel();
         CboxOperarios = new javax.swing.JComboBox<>();
         cBox_ordenes = new javax.swing.JComboBox<>();
@@ -48,6 +47,7 @@ public class Ini extends javax.swing.JFrame {
         jButtonLimpiar = new javax.swing.JButton();
         jButtonGraficar = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -67,7 +67,6 @@ public class Ini extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nombre");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 90, 20));
-        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 140, 30));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
@@ -147,13 +146,9 @@ public class Ini extends javax.swing.JFrame {
 
         jButtonGraficar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jButtonGraficar.setText("Graficar");
-        jButtonGraficar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonGraficarActionPerformed(evt);
-            }
-        });
         getContentPane().add(jButtonGraficar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, 130, 40));
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, -1));
+        getContentPane().add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 130, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
